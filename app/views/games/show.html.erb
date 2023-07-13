@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <%= render '/users/user_info', user: @game.user %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Game detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to user_path(@game.user.id) do %>
+                <%= image_tag @game.user.get_profile_image(100,100) %><br>
+                <%= @game.user.name %>
+              <% end %>
+            </td>
+            <td><%= image_tag @game.get_image %></td>
+            <td><%= link_to @game.game_name, game_path(@game.id) %></td>
+            <td><%= @game.caption %></td>
+            <td><% if @game.user == current_user %>
+              <td><%= link_to "Edit", edit_game_path(@game.id), class: "btn btn-sm btn-success" %></td>
+              <td><%= link_to "Destroy", game_path(@game.id), method: :delete, data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger destroy" %>
+                <% end %></td>
+            <td>投稿日：<%= @game.created_at.strftime('%Y/%m/%d') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
