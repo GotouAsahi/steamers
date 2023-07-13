@@ -1,0 +1,3 @@
+$('.game-comments-counter').html("<%= j(render 'game_comments/counter', game: @comment.game) %>")
+$('.game-comments-index').html("<%= j(render 'game_comments/index', game: @comment.game) %>")
+$('textarea').val("")

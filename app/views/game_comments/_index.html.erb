@@ -1,0 +1,20 @@
+<table>
+  <tbody>
+      <% game.game_comments.each do |game_comment| %>
+      <tr>
+        <td>
+          <%= link_to user_path(game_comment.user) do %>
+            <%= image_tag game_comment.user.get_profile_image(80,80) %><br>
+            <%= game_comment.user.name %>
+          <% end %>
+        </td>
+        <td><%= game_comment.comment %></td>
+        <td>
+          <% if game_comment.user == current_user %>
+            <%= link_to "Destroy", game_game_comment_path(game, game_comment), method: :delete, class: "btn btn-danger pull-right", remote: true %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
