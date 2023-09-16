@@ -19,6 +19,7 @@
             <div class="game-comments-counter">
               <%= render "game_comments/counter", game: @game %>
             </div>
+            <div>閲覧数: <%= @game.view_counts.count %></div>
             <div><% if @game.user == current_user %>
               <div><%= link_to "Edit", edit_game_path(@game.id), class: "btn btn-sm btn-success" %>
               <%= link_to "Destroy", game_path(@game.id), method: :delete, data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger destroy" %>

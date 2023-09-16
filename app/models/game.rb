@@ -4,6 +4,8 @@ class Game < ApplicationRecord
   has_many :game_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  has_many :view_counts, dependent: :destroy
+
   validates :game_name, presence: true
   validates :caption, presence: true, length: { maximum: 300 }
 

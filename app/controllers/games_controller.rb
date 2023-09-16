@@ -19,11 +19,17 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all.reverse_order
+    @games = Game.all
+    to = Time.current.at_end_of_day
+    from = (to - 6.day).at_beginning_of_day
+    @games = Game.includes(:favorites).sort_by { |x| x.favorites.where(created_at: from...to).size }.reverse
   end
 
   def show
     @game = Game.find(params[:id])
+    unless ViewCount.find_by(user_id: current_user.id, game_id: @game.id)
+      current_user.view_counts.create(game_id: @game.id)
+    end
     @game_comment = GameComment.new
   end
 
