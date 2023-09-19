@@ -19,7 +19,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
+    @games = Game.all.reverse_order
   end
 
   def show

@@ -1,11 +1,11 @@
 <div class="col-md-3">
   <h2>User info</h2>
-  <%= image_tag user.get_profile_image(100,100) %>
+  <%= image_tag user.get_profile_image(100,100), class: 'placeholder-image', style: 'width: 100px; height: 100px;' %>
   <table class="table">
     <tbody>
       <tr></tr>
       <tr>
-        <th>namme</th>
+        <th>name</th>
         <th><%= user.name %></th>
       </tr>
       <tr>

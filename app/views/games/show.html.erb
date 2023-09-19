@@ -5,13 +5,13 @@
       <h2>Game detail</h2>
             <div>
               <%= link_to user_path(@game.user.id) do %>
-                <%= image_tag @game.user.get_profile_image(100,100) %><br>
+                <%= image_tag @game.user.get_profile_image(100, 100), class: 'placeholder-image', style: 'width: 100px; height: 100px;' %><br>
                 <%= @game.user.name %>
               <% end %>
               投稿日：<%= @game.created_at.strftime('%Y/%m/%d') %>
             </div>
             <h1><%= @game.game_name%></h1>
-            <div><%= image_tag @game.get_image(400,200) %></div>
+            <div><%= image_tag @game.get_image(400,200), class: 'placeholder-image', style: 'width: 400px; height: 200px;' %></div>
             <div><%= @game.caption %></div>
             <div class=<%= "favorite-" + @game.id.to_s %> >
               <%= render "favorites/btn", game: @game %>

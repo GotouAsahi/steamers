@@ -5,7 +5,7 @@ class Game < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   validates :game_name, presence: true
-  validates :caption, presence: true, length: { maximum: 200 }
+  validates :caption, presence: true, length: { maximum: 300 }
 
   def get_image(width, height)
     unless image.attached?

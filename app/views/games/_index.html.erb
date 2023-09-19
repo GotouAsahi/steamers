@@ -13,10 +13,10 @@
       <tr>
         <td>
           <%= link_to user_path(game.user.id) do %>
-            <%= image_tag game.user.get_profile_image(80,80),class:"mt-3 rounded-circle"; %>
+            <%= image_tag game.user.get_profile_image(80,80), class: 'placeholder-image mt-3 rounded-circle', style: 'width: 100px; height: 100px;' %>
           <% end %>
         </td>
-        <td> <%= image_tag game.get_image(200,80),class:"mt-3"; %></td>
+        <td> <%= image_tag game.get_image(100,80), class: 'placeholder-image mt-3', style: 'width: 100px; height: 80px;' %></td>
         <td><%= link_to game.game_name, game_path(game.id) %></td>
         <td><%= game.caption %></td>
         <td class=<%= "favorite-" + game.id.to_s %> >
