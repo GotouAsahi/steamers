@@ -20,6 +20,9 @@ class User < ApplicationRecord
 
   has_many :view_counts, dependent: :destroy
 
+  has_many :group_users
+  has_many :groups, through: :group_users, source: :group
+
   has_one_attached :profile_image
 
   validates :name, length: { minimum: 2, maximum: 10 }, uniqueness: true

@@ -13,4 +13,10 @@ Rails.application.routes.draw do
     post "search" => "users#search"
   end
   resources :chats, only: %i[show create]
+  resources :groups do
+    get 'join' => 'groups#join'
+    delete 'exit' => 'groups#exit'
+    get 'group_mails/new'
+    post 'group_mails/create'
+  end
 end

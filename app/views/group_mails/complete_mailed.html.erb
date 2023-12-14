@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h3 class="margin_top">送信が完了しました</h3>
+  <div class="main_width">
+  <div class="margin_top">内容は以下の通りです。</div>
+    <div class="small_margin_top">
+      [タイトル]<p class="font-weight-bold"> <%= @new_group_mail.title %></p>
+    </div>
+    <div>
+      [本文]<p class="font-weight-bold"> <%= safe_join(@new_group_mail.content.split("\n"),tag(:br)) %></p>
+    </div>
+  </div>
+  <div><%= link_to "グループに戻る", group_path(@group) %></div>
+</div>

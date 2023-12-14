@@ -35,6 +35,6 @@ class ChatsController < ApplicationController
     user = User.find(params[:id])
     return if current_user.following?(user) && user.following?(current_user)
 
-    redirect_to books_path
+    redirect_to games_path
   end
 end
