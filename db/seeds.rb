@@ -20,17 +20,95 @@
 end
 
 [
-  ['闇の帝王', '『闇の帝王』は、ヤクザをテーマにした迫力満点のアクションゲームです。過激な戦闘シーンや緊迫感あふれるストーリー展開が魅力で、プレイヤーはヤクザの世界に没入します。多彩な武器やスキルを駆使してライバルとの抗争を勝ち抜き、頂点を目指しましょう。美麗なグラフィックと没入感のあるサウンドが、この闇の世界を一層リアルに演出しています。『闇の帝王』は、ヤクザゲームのファンにはたまらない一作です。',5, File.open('./app/assets/images/yakuza.png'),'yakuza.png'],
-  ['勇者の絆', '『勇者の絆』は、ドラゴンクエストを彷彿とさせる壮大な冒険が楽しめるRPGです。美しいグラフィックや感動的な音楽に包まれながら、プレイヤーは世界を救う勇者として仲間たちと共に旅立ちます。緻密に作り込まれたストーリーとキャラクターの成長を通じて、感情豊かな絆が生まれます。モンスターとのエキサイティングなバトルやダンジョンの探索も魅力的で、やりこみ要素もたっぷりです。『勇者の絆』は、ドラゴンクエストシリーズのファンにとって必見の作品です。',3, File.open('./app/assets/images/dorakue.png'),'dorakue.png'],
-  ['永遠の英雄', '『永遠の英雄』は、ファイナルファンタジーを彷彿とさせる壮大なファンタジーRPGです。美麗な世界観と緻密なストーリーテリングが魅力で、プレイヤーは勇者として運命の戦いに挑みます。感情的なキャラクターたちや驚くべき魔法の力、エピックなバトルシーンは、プレイヤーを没入させること間違いありません。多彩なサイドクエストや謎解き要素も楽しみの一つで、深い世界を探索できます。『永遠の英雄』は、ファイナルファンタジーシリーズのファンにとって、夢中になれる素晴らしいゲームです。',3, File.open('./app/assets/images/ff.png'),'ff.png'],
-  ['戦場の猛者', '『戦場の猛者』は、リアルなFPS（ファーストパーソンシューティング）ゲームの究極体験です。没入感あふれるグラフィックと臨場感あるサウンドが、プレイヤーを戦場に引き込みます。緻密な戦略と高度なリアリズムが求められる戦闘は、緊張感に満ちており、協力プレイや対戦モードも楽しめます。リアルな銃器や兵器の操作感やリアルな戦術要素は、本物の兵士のような感覚を味わえます。『戦場の猛者』は、リアルFPSを求めるプレイヤーにとって、興奮とスリルに満ちたゲーム体験を提供します。',4, File.open('./app/assets/images/fps.png'),'fps.png'],
-  ['Star Idol Adventures', '『Star Idol Adventures』は、魅力的なアイドルたちが活躍する海外発のゲームです。プレイヤーはアイドルのマネージャーとなり、彼女たちをトップアイドルへと導きます。魅力的なキャラクターデザインと豪華なステージパフォーマンスは目を引き、リズミカルなリズムゲームや選択肢によるストーリー展開など、バラエティに富んだ要素が楽しめます。さらに、海外の文化や舞台を巡るワールドツアーも魅力的で、国境を超えた人気アイドルへの成長を追体験できます。『Star Idol Adventures』は、アイドルファンにとって夢の舞台です。',2, File.open('./app/assets/images/idol.png'),'idol.png'],
-  ['Adventure World: Super Jump', '『Adventure World: Super Jump』は、海外発の楽しいマリオ風アクションゲームです。鮮やかなグラフィックとキャッチーな音楽が特徴で、プレイヤーは勇敢な冒険者となり、様々なステージを駆け巡ります。敵を飛び越えたり、パワーアップアイテムを集めたりしながら、仲間たちを救い、邪悪なボスとの壮絶なバトルに挑戦します。マリオシリーズを彷彿とさせる爽快なジャンプアクションと、秘密のワールドの発見も楽しめます。『Adventure World: Super Jump』は、マリオファンにとっても楽しめる素晴らしいゲームです。',3, File.open('./app/assets/images/mario.png'),'mario.png'],
-  ['戦国英雄伝', '『戦国英雄伝』は、壮大な戦国時代を舞台にした戦略シミュレーションゲームです。プレイヤーは武将となり、領地の統治や軍勢の編成、戦略の立案などを行います。史実に基づいたキャラクターや歴史的なイベントがリアルに再現されており、戦国時代の臨場感を味わえます。戦闘では、兵士の配置や戦術の選択が重要で、領土拡大と敵勢力への打撃を目指します。豪華なグラフィックと緻密なストーリーテリングが、プレイヤーを戦国の世界に引き込みます。『戦国英雄伝』は、戦国時代のファンにとって必見の作品です。',5, File.open('./app/assets/images/sengoku.png'),'sengoku.png']
-].each do |game_name, caption,user_id, img,filename|
+  ['闇の帝王', '『闇の帝王』は、ヤクザをテーマにした迫力満点のアクションゲームです。過激な戦闘シーンや緊迫感あふれるストーリー展開が魅力で、プレイヤーはヤクザの世界に没入します。多彩な武器やスキルを駆使してライバルとの抗争を勝ち抜き、頂点を目指しましょう。美麗なグラフィックと没入感のあるサウンドが、この闇の世界を一層リアルに演出しています。『闇の帝王』は、ヤクザゲームのファンにはたまらない一作です。',5, File.open('./app/assets/images/yakuza.png'),'yakuza.png',4,'アクション'],
+  ['勇者の絆', '『勇者の絆』は、ドラゴンクエストを彷彿とさせる壮大な冒険が楽しめるRPGです。美しいグラフィックや感動的な音楽に包まれながら、プレイヤーは世界を救う勇者として仲間たちと共に旅立ちます。緻密に作り込まれたストーリーとキャラクターの成長を通じて、感情豊かな絆が生まれます。モンスターとのエキサイティングなバトルやダンジョンの探索も魅力的で、やりこみ要素もたっぷりです。『勇者の絆』は、ドラゴンクエストシリーズのファンにとって必見の作品です。',3, File.open('./app/assets/images/dorakue.png'),'dorakue.png',5,'RPG'],
+  ['永遠の英雄', '『永遠の英雄』は、ファイナルファンタジーを彷彿とさせる壮大なファンタジーRPGです。美麗な世界観と緻密なストーリーテリングが魅力で、プレイヤーは勇者として運命の戦いに挑みます。感情的なキャラクターたちや驚くべき魔法の力、エピックなバトルシーンは、プレイヤーを没入させること間違いありません。多彩なサイドクエストや謎解き要素も楽しみの一つで、深い世界を探索できます。『永遠の英雄』は、ファイナルファンタジーシリーズのファンにとって、夢中になれる素晴らしいゲームです。',3, File.open('./app/assets/images/ff.png'),'ff.png',4,'ファンタジー'],
+  ['戦場の猛者', '『戦場の猛者』は、リアルなFPS（ファーストパーソンシューティング）ゲームの究極体験です。没入感あふれるグラフィックと臨場感あるサウンドが、プレイヤーを戦場に引き込みます。緻密な戦略と高度なリアリズムが求められる戦闘は、緊張感に満ちており、協力プレイや対戦モードも楽しめます。リアルな銃器や兵器の操作感やリアルな戦術要素は、本物の兵士のような感覚を味わえます。『戦場の猛者』は、リアルFPSを求めるプレイヤーにとって、興奮とスリルに満ちたゲーム体験を提供します。',4, File.open('./app/assets/images/fps.png'),'fps.png',5,'FPS'],
+  ['Star Idol Adventures', '『Star Idol Adventures』は、魅力的なアイドルたちが活躍する海外発のゲームです。プレイヤーはアイドルのマネージャーとなり、彼女たちをトップアイドルへと導きます。魅力的なキャラクターデザインと豪華なステージパフォーマンスは目を引き、リズミカルなリズムゲームや選択肢によるストーリー展開など、バラエティに富んだ要素が楽しめます。さらに、海外の文化や舞台を巡るワールドツアーも魅力的で、国境を超えた人気アイドルへの成長を追体験できます。『Star Idol Adventures』は、アイドルファンにとって夢の舞台です。',2, File.open('./app/assets/images/idol.png'),'idol.png',3,'アイドル'],
+  ['Adventure World: Super Jump', '『Adventure World: Super Jump』は、海外発の楽しいマリオ風アクションゲームです。鮮やかなグラフィックとキャッチーな音楽が特徴で、プレイヤーは勇敢な冒険者となり、様々なステージを駆け巡ります。敵を飛び越えたり、パワーアップアイテムを集めたりしながら、仲間たちを救い、邪悪なボスとの壮絶なバトルに挑戦します。マリオシリーズを彷彿とさせる爽快なジャンプアクションと、秘密のワールドの発見も楽しめます。『Adventure World: Super Jump』は、マリオファンにとっても楽しめる素晴らしいゲームです。',3, File.open('./app/assets/images/mario.png'),'mario.png',3,'アクション'],
+  ['戦国英雄伝', '『戦国英雄伝』は、壮大な戦国時代を舞台にした戦略シミュレーションゲームです。プレイヤーは武将となり、領地の統治や軍勢の編成、戦略の立案などを行います。史実に基づいたキャラクターや歴史的なイベントがリアルに再現されており、戦国時代の臨場感を味わえます。戦闘では、兵士の配置や戦術の選択が重要で、領土拡大と敵勢力への打撃を目指します。豪華なグラフィックと緻密なストーリーテリングが、プレイヤーを戦国の世界に引き込みます。『戦国英雄伝』は、戦国時代のファンにとって必見の作品です。',5, File.open('./app/assets/images/sengoku.png'),'sengoku.png',1,'SRPG']
+].each do |game_name, caption,user_id, img,filename,star,tag|
   game=Game.create!(
-    { game_name: game_name, caption: caption, user_id: user_id}
+    { game_name: game_name, caption: caption, user_id: user_id, star:star, tag:tag}
   )
   game.image.attach(io: img, filename: filename)
   game.save!
+end
+
+(1..5).each do |user_id|
+  (1..7).to_a.shuffle.take(4).each do |game_id|
+    Favorite.create!(
+      user_id: user_id,
+      game_id: game_id
+    )
+  end
+end
+
+(1..5).each do |user_id|
+  (1..7).to_a.shuffle.take(4).each do |game_id|
+    ViewCount.create!(
+      user_id: user_id,
+      game_id: game_id
+    )
+  end
+end
+
+# Seed for relationships table
+(1..5).each do |follower_id|
+  # Ensure that the follower and followed are different
+  (1..5).reject { |followed_id| followed_id == follower_id }.to_a.shuffle.take(2).each do |followed_id|
+    Relationship.create!(
+      follower_id: follower_id,
+      followed_id: followed_id
+    )
+  end
+end
+
+# Seed for groups table
+group_names = ["ゲーム仲間", "プログラミングサークル", "読書会", "料理好きな仲間", "旅行好きな仲間"]
+group_img = [
+  { img: "./app/assets/images/cat.jpg", filename: "cat.jpg" },
+  { img: "./app/assets/images/game.png", filename: "game.png" },
+  { img: "./app/assets/images/minecraft.jpg", filename: "minecraft.jpg" },
+  { img: "./app/assets/images/morrigan.jpg", filename: "morrigan.jpg" },
+  { img: "./app/assets/images/pacman.png", filename: "pacman.png"},
+  { img: "./app/assets/images/pixel-art.png", filename: "pixel-art.png"},
+  { img: "./app/assets/images/play.png", filename:"play.png"}
+]
+
+group_names.each_with_index do |name, index|
+  owner_id = (1..5).to_a.sample
+  group = Group.create!(
+    name: name,
+    introduction: "これは#{name}のグループです。",
+    owner_id: owner_id
+  )
+  img_info = group_img[index]
+  group.image.attach(io: File.open(img_info[:img]), filename: img_info[:filename])
+  group.save!
+
+  # Seed for group_users table with random number of members (1 to 5)
+  i = rand(1..4)  # オーナーを除いて最大4人のメンバーを選択
+  member_ids = (1..5).to_a.shuffle.reject { |id| id == owner_id }.take(i)
+
+  member_ids.each do |user_id|
+    GroupUser.create!(
+      user_id: user_id,
+      group_id: group.id
+    )
+  end
+end
+
+
+# Seed for game_comments table
+(1..7).each do |game_id|
+  rand(1..5).times do
+    user_id = (1..5).to_a.sample  # ランダムなユーザーIDを選択するように修正
+    comment = Faker::Lorem.sentence
+    GameComment.create!(
+      comment: comment,
+      user_id: user_id,
+      game_id: game_id
+    )
+  end
 end

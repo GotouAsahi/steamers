@@ -19,4 +19,5 @@ Rails.application.routes.draw do
     get 'group_mails/new'
     post 'group_mails/create'
   end
+  get '/search', to: 'games#search'
 end

@@ -22,7 +22,15 @@ class GamesController < ApplicationController
     @games = Game.all
     to = Time.current.at_end_of_day
     from = (to - 6.day).at_beginning_of_day
-    @games = Game.includes(:favorites).sort_by { |x| x.favorites.where(created_at: from...to).size }.reverse
+    if params[:sort] == 'newer'
+      @games = Game.order(created_at: 'DESC')
+    elsif params[:sort] == 'higher'
+      @games = Game.order(star: 'DESC')
+    elsif params[:sort] == 'liker'
+      @games = Game.includes(:favorites).sort_by { |x| x.favorites.where(created_at: from...to).size }.reverse
+    else
+      @games = Game.all
+    end
   end
 
   def show
@@ -59,10 +67,20 @@ class GamesController < ApplicationController
     redirect_to games_path
   end
 
+  def search
+    @tag = params[:tag]
+    if @tag.present?
+      @games = Game.where("tag LIKE?","%#{@tag}%")
+    else
+      @games = Game.all
+    end
+    render :search_result
+  end
+
   private
 
   def game_params
-    params.require(:game).permit(:game_name, :image, :caption)
+    params.require(:game).permit(:game_name, :image, :tag, :caption,:star)
   end
 
   def ensure_correct_user

@@ -1,0 +1,12 @@
+<div id="star-<%= game.id %>"></div>
+<script>
+$('#star-<%= game.id %>').empty();
+    var elem = document.querySelector('#star-<%= game.id %>');
+    var opt = {
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        readOnly: true,
+        score: <%= game.star %>
+    };
+    raty(elem,opt);
+</script>

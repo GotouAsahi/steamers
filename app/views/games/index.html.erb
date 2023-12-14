@@ -3,6 +3,7 @@
     <%= render '/users/user_info', user: current_user %>
     <div class="col-md-8 offset-md-1">
       <h2>Games</h2>
+      <%= link_to '新しい順', games_path(sort: 'newer') %>｜<%= link_to '評価の高い順', games_path(sort: 'higher') %>｜<%= link_to '最近のいいね順', games_path(sort: 'liker') %>
       <%= render 'index', games: @games %>
     </div>
   </div>

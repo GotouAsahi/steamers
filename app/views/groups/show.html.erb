@@ -9,8 +9,9 @@
           <%= image_tag @group.image, size: "100x100" %>
         <% else %>
           <%= image_tag 'no_image', size: "100x100" %>
-        <% end %>
-        グループ名：<%= @group.name %>
+        <% end %><br>
+        グループ名：<%= @group.name %><br>
+        オーナー：<%= image_tag @group.owner.get_profile_image(100,100), class: 'placeholder-image', style: 'width: 100px; height: 100px;' %><%= @group.owner.name %>
       </div>
       <div>紹介文：<%= @group.introduction %></div>
       <% if @group.owner == current_user %>
@@ -25,6 +26,7 @@
       <div>
         メンバー<br>
         <% @group.users.each do |member| %>
+        <%= image_tag member.get_profile_image(100,100), class: 'placeholder-image', style: 'width: 100px; height: 100px;' %>
           <%= member.name %><br>
         <% end %>
       </div>

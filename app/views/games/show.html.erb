@@ -1,33 +1,71 @@
 <div class="container">
   <div class="row">
     <%= render '/users/user_info', user: @game.user %>
+    
     <div class="col-md-8 offset-md-1">
-      <h2>Game detail</h2>
-            <div>
-              <%= link_to user_path(@game.user.id) do %>
-                <%= image_tag @game.user.get_profile_image(100, 100), class: 'placeholder-image', style: 'width: 100px; height: 100px;' %><br>
-                <%= @game.user.name %>
-              <% end %>
-              投稿日：<%= @game.created_at.strftime('%Y/%m/%d') %>
-            </div>
-            <h1><%= @game.game_name%></h1>
-            <div><%= image_tag @game.get_image(400,200), class: 'placeholder-image', style: 'width: 400px; height: 200px;' %></div>
-            <div><%= @game.caption %></div>
-            <div class=<%= "favorite-" + @game.id.to_s %> >
-              <%= render "favorites/btn", game: @game %>
-            </div>
-            <div class="game-comments-counter">
-              <%= render "game_comments/counter", game: @game %>
-            </div>
-            <div>閲覧数: <%= @game.view_counts.count %></div>
-            <div><% if @game.user == current_user %>
-              <div><%= link_to "Edit", edit_game_path(@game.id), class: "btn btn-sm btn-success" %>
-              <%= link_to "Destroy", game_path(@game.id), method: :delete, data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger destroy" %>
-                <% end %></div>
-
+      <!-- Game Detail -->
+      <h2>Game Detail</h2>
+      
+      <!-- Contributor Section -->
+      <h4>Contributor</h4>
+      <%= link_to user_path(@game.user.id) do %>
+        <%= image_tag @game.user.get_profile_image(100, 100), class: 'placeholder-image', style: 'width: 100px; height: 100px;' %>
+        <%= @game.user.name %><br>
+      <% end %>
+      
+      Post Date:<%= @game.created_at.strftime('%Y/%m/%d') %>
+      
+      <!-- Title -->
+      <h4>Title</h4>
+      <h5><%= @game.game_name %></h5>
+      
+      <!-- Edit and Destroy Buttons (if the user is the owner) -->
+      <% if @game.user == current_user %>
+        <%= link_to "Edit", edit_game_path(@game.id), class: "btn btn-sm btn-success" %>
+        <%= link_to "Destroy", game_path(@game.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-danger destroy" %>
+      <% end %>
+      
+      <!-- Table Section -->
+      <h4>Game Statistics</h4>
+      <table class="table">
+        <thead>
+          <th>Tag</th>
+          <th>Like</th>
+          <th>Views</th>
+          <th>Comments</th>
+          <th>Star</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= link_to @game.tag, search_path(tag: @game.tag) %></td>
+            <td>
+              <div class=<%= "favorite-" + @game.id.to_s %> >
+                <%= render "favorites/btn", game: @game %>
+              </div>
+            </td>
+            <td><%= @game.view_counts.count %></td>
+            <td>
+              <div class="game-comments-counter">
+                <%= render "game_comments/counter", game: @game %>
+              </div>
+            </td>
+            <td><%= render "output_star", game: @game %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <!-- Caption Section -->
+      <h4>Caption</h4>
+      <%= image_tag @game.get_image(400, 200), class: 'placeholder-image', style: 'width: 400px; height: 200px;' %><br>
+      <%= @game.caption %>
+      
+      <!-- Game Comments Section -->
       <div class="game-comments-index">
         <%= render "game_comments/index", game: @game %>
       </div>
+      
+      <!-- Game Comments Form -->
+      <h4>Comments</h4>
       <%= render "game_comments/form", game: @game, game_comment: @game_comment %>
     </div>
   </div>

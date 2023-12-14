@@ -8,6 +8,8 @@ class Game < ApplicationRecord
 
   validates :game_name, presence: true
   validates :caption, presence: true, length: { maximum: 300 }
+  validates :star, presence: true
+  validates :tag, presence: true
 
   def get_image(width, height)
     unless image.attached?

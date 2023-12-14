@@ -4,8 +4,10 @@
       <th></th>
       <th>Game_image</th>
       <th>Title</th>
-      <th>Caption</th>
-      <th colspan"3"></th>
+      <th>tag</th>
+      <th>like</th>
+      <th>comments</th>
+      <th>star</th>
     </tr>
   </thead>
   <tbody>
@@ -18,11 +20,12 @@
         </td>
         <td> <%= image_tag game.get_image(100,80), class: 'placeholder-image mt-3', style: 'width: 100px; height: 80px;' %></td>
         <td><%= link_to game.game_name, game_path(game.id) %></td>
-        <td><%= game.caption %></td>
+        <td><%= link_to game.tag, search_path(tag: game.tag) %></td>
         <td class=<%= "favorite-" + game.id.to_s %> >
             <%= render "favorites/btn", game: game %>
         </td>
         <td><%= render "game_comments/counter", game: game %></td>
+        <td><%= render "games/output_star", game: game %></td>
       </tr>
     <% end %>
   </tbody>
